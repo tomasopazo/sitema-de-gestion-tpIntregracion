@@ -21,13 +21,13 @@ exports.agregarEstudiante = async (estudiante) => {
 
  //actualizamos datos de un usuario
 exports.actualizarEstudiante = async (estudiante) => {
-    const [rows, fields] = await db.execute('UPDATE estudiantes SET nombre = ?, edad = ?, grado = ? WHERE id = ?', [estudiante.nombre, estudiante.edad, estudiante.grado, estudiante.idEstudiante])
+    const [rows, fields] = await db.execute('UPDATE estudiantes SET nombre = ?, edad = ?, grado = ? WHERE idEst = ?', [estudiante.nombre, estudiante.edad, estudiante.grado, estudiante.idEstudiante])
     return rows;
 };
 
 
 //eliminamos un estudiante
 exports.deleteEstudiante = async (id) => {
-    const [rows, fields] = await db.execute('DELETE FROM estudiantes WHERE id =?', [id])
+    const [rows, fields] = await db.execute('DELETE FROM estudiantes WHERE idEst =?', [id])
     return rows;
 };

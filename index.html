@@ -143,7 +143,7 @@
                     data.forEach(estudiante => {
                         $("#tabla-estudiantes").append(
                             "<tr>"+
-                            "<td>"+estudiante.id+"</td>"+
+                            "<td>"+estudiante.idEst+"</td>"+
                             "<td>"+estudiante.nombre+"</td>"+
                             "<td>"+estudiante.edad+"</td>"+
                             "<td>"+estudiante.grado+"</td>"+
@@ -185,7 +185,7 @@
                     data.forEach(curso => {
                         $("#tabla-cursos").append(
                             "<tr>"+
-                            "<td>"+curso.id+"</td>"+
+                            "<td>"+curso.idCursos+"</td>"+
                             "<td>"+curso.nombre+"</td>"+
                             "<td>"+curso.descripcion+"</td>"+
                             "</tr>"
@@ -198,14 +198,14 @@
 
     <script>
         $(document).ready(function (){
-            $.get("http://localhost:3000/api/estudiantesCursos", (resp)=>{
+            $.get("http://localhost:3000/api/estudiantescursos", (resp)=>{
                 const {success,data} = resp;
                 if(success){
                     data.forEach(estudiantescursos => {
                         $("#tabla-estudiantes-cursos").append(
                             "<tr>"+
-                            "<td>"+estudiantescursos.estudiante_id+"</td>"+
-                            "<td>"+estudiantescursos.curso_id+"</td>"+
+                            "<td>"+estudiantescursos.id_estudiante+"</td>"+
+                            "<td>"+estudiantescursos.id_curso+"</td>"+
                             "</tr>"
                         )
                     });
